@@ -1,0 +1,35 @@
+def generate_sequence(M, N, K):
+    if K == 0:
+        return "Invalid input! K should be non-zero."
+
+    if M > N and K > 0:
+        return "No valid sequence exists with the given parameters."
+
+    sequence = []
+    current = M
+
+    while current <= N:
+        sequence.append(current)
+        current += K
+
+    return sequence
+
+# Main function
+def main():
+    # Taking input from the user or using sample input
+    M = int(input("Enter value for M: "))
+    N = int(input("Enter value for N: "))
+    K = int(input("Enter value for K: "))
+
+    # Generating the sequence
+    result = generate_sequence(M, N, K)
+
+    # Printing the result
+    if isinstance(result, list):
+        print(",".join(map(str, result)))
+    else:
+        print(result)
+
+# Execute the main function
+if __name__ == "__main__":
+    main()
