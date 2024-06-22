@@ -1,0 +1,42 @@
+def count_vowels_and_consonants(statement):
+    vowels = set("aeiouAEIOU")
+    consonants = set("bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ")
+    
+    vowel_count = 0
+    consonant_count = 0
+    
+    for char in statement:
+        if char.isalpha():
+            if char in vowels:
+                vowel_count += 1
+            elif char in consonants:
+                consonant_count += 1
+    
+    return vowel_count, consonant_count
+
+# Main function
+def main():
+    # Taking input from the user
+    statement = input("Enter a statement: ")
+    
+    # Counting vowels and consonants
+    vowel_count, consonant_count = count_vowels_and_consonants(statement)
+    
+    # Determining which count is maximum
+    if vowel_count > consonant_count:
+        max_type = "vowels"
+        max_count = vowel_count
+    else:
+        max_type = "consonants"
+        max_count = consonant_count
+    
+    # Printing the results
+    print(f"Number of vowels = {vowel_count}")
+    print(f"Number of consonants = {consonant_count}")
+    print(f"The count of {max_type} is maximum: {max_count}")
+
+# Execute the main function
+if __name__ == "__main__":
+    main()
+
+  
